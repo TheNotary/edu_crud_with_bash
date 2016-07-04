@@ -40,110 +40,194 @@
         
         
         
+        <!------------------------------------ Browser/ Client SECTION ------------------------>  
         <section>
-          <div style="background: url(images/webserver_browser_interaction/what_a_webclient_does.png) no-repeat; height: 600px; background-size: 60% auto;"></div>
+          <section>
+            <div style="background: url(images/webserver_browser_interaction/what_a_webclient_does.png) no-repeat; height: 600px; background-size: 60% auto;"></div>
+            
+            <aside class="notes">
+              <p>HTTP 1.1 request
+              <p>HTML Document
+              <p>WHERE's all the front end!?!??!?!
+              <p>WHERE's the backend???
+            </aside>
+          </section>
           
-          <aside class="notes">
-            <p>HTTP 1.1 request
-            <p>HTML Document
-            <p>WHERE's all the front end!?!??!?!
-            <p>WHERE's the backend???
-          </aside>
+          <section>
+            <div style="background: url(images/bigstockphoto_many_doors_4222839.jpg) no-repeat; height: 600px; background-size: 100% auto;margin-top:100px"></div>
+            
+            <aside class="notes">
+              <p>Web Servers Listen on ports
+              <p>Everything that happens on the other side of that port is the backend, right?
+            </aside>
+          </section>
         </section>
         
-        <section>
-          <div style="background: url(images/bigstockphoto_many_doors_4222839.jpg) no-repeat; height: 600px; background-size: 100% auto;margin-top:100px"></div>
-          
-          <aside class="notes">
-            <p>Web Servers Listen on ports
-            <p>Everything that happens on the other side of that port is the backend, right?
-          </aside>
-        </section>
         
         
+        <!------------------------------------ FASTCGI SECTION ------------------------>  
         <section>
-          <div style="background: url(images/nginx_fastcgi.jpg) no-repeat; height: 600px; background-size: 100% auto;"></div>
+          <section>
+            <div style="background: url(images/nginx_fastcgi.jpg) no-repeat; height: 600px; background-size: 100% auto;"></div>
+            
+            <aside class="notes">
+              <p>
+              <p>
+            </aside>
+          </section>
           
-          <aside class="notes">
-            <p>
-            <p>
-          </aside>
-        </section>
-        
-        <section>
+          <section>
           
-          <p>Code for backend 'perl'
-          <p>ANY UNIX PROCESS... show code for backend 'bash'
+            <span class="inline">(perl_hi.pl)</span>
+            <pre><div data-trim data-noescape>
+              #!/usr/bin/perl
 
-        </section>
-        
-        <section>
-          
-          <p>insert code for backend 'bash'
-          <p>
+              print "Content-type:text/html\r\n\r\n";
+              print '&lt;html&gt;';
+              print '&lt;head&gt;';
+              print '&lt;title&gt;Hello Word&lt;/title&gt;';
+              print '&lt;/head&gt;';
+              print '&lt;body&gt;';
+              print '  &lt;span&gt;Random Numb: ' . rand() . '&lt;/span&gt;;
+              print '  &lt;h2&gt;Hello Word from perl!&lt;/h2&gt;';
+              print '&lt;/body&gt;';
+              print '&lt;/html&gt;';
 
-        </section>
-        
-        
-        
-        
-        <section>
-          <div style="background: url(images/nginx_rack.jpg) no-repeat; height: 600px; background-size: 100% auto;"></div>
-          
-          <aside class="notes">
-            <p>
-            <p>
-          </aside>
-        </section>
-        
-        <section>
-          
-          <p>What's Rack app?  WSGI?  PSGI?
-          <p class="fragment">An app written in a manor such that...
-          
-          <ul class="fragment">
-            <li> Responds to call
-            <li> returns an array [&lt;response code&gt;, &lt;headers&gt;, &lt;body&gt;]
-          </ul>
-          
-          <p class="fragment">Rack:  pattern for writing a piece of ruby code
-          
-          <p>
-          <p>
+              1;
 
+            </div></pre>
+            
+            <p>Code for backend 'perl'
+            <p>ANY UNIX PROCESS... show code for backend 'bash'
 
+          </section>
+          
+          <section>
+            <span class="inline">(bash_hi.sh)</span>
+            <pre><div data-trim data-noescape>
+              #!/bin/bash
+
+              ##########
+              # header #
+              ##########
+
+              echo Content-type: text/plain
+              echo
+
+              ########
+              # body #
+              ########
+
+              echo "Hello World !"
+            </div></pre>
+          </section>
+          
+          <section>
+            <span class="inline">(php_hi)</span>
+            <pre><div data-trim data-noescape>
+              #!/usr/bin/php
+              Content-type:text/html
+              
+              &lt;html&gt;
+              &lt;body&gt;
+              &lt;span&gt;
+                Random Number: 
+                &lt;?php echo rand(); ?&gt;
+              &lt;/span&gt;
+              Hello World!
+              &lt;/body&gt;
+              &lt;/html&gt;
+            </div></pre>
+          </section>
+          
+          <section>
+            <h3>Terminal Time!</h3>
+          
+          </section>
+          
+          <section>
+            <div style="background: url(images/curl_get.png) no-repeat; height: 600px; background-size: 100% auto;margin-top:100px"></div>
+            
+            <aside class="notes">
+              <p>Instruct class to boot up docker container
+              <p>We're going to hit some of these CGI scripts
+            </aside>
+          </section>
+          
+          <section>
+            <div style="background: url(images/tcpdump_web_transaction.png) no-repeat; height: 600px; background-size: 100% auto;margin-top:100px"></div>
+            
+            <aside class="notes">
+              <p>We see two stanzas (req, resp)
+              <p>tcp
+              <p>
+            </aside>
+          </section>
+          
         </section>
         
+        
+        
+        
+        <!------------------------------------ RACK SECTION ------------------------>
         <section>
+          <section>
+            <div style="background: url(images/nginx_rack.jpg) no-repeat; height: 600px; background-size: 100% auto;"></div>
+            
+            <aside class="notes">
+              <p>
+              <p>
+            </aside>
+          </section>
           
-          <p>What are some examples of rack servers?
+          <section>
+            
+            <p>What's Rack app?  WSGI?  PSGI?
+            <p class="fragment">An app written in a manor such that...
+            
+            <ul class="fragment">
+              <li> Responds to call
+              <li> returns an array [&lt;response code&gt;, &lt;headers&gt;, &lt;body&gt;]
+            </ul>
+            
+            <p class="fragment">Rack:  pattern for writing a piece of ruby code
+            <p>
+            <p>
+          </section>
           
-          <aside class="notes">
-            <p>thin, unicorn, puma, webrick??
-          </aside>
+          <section>
+            <span class="inline">(config.ru)</span>
+            <pre><div data-trim data-noescape>
+              run Proc.new do |env| 
+                [ '200', 
+                  {'Content-Type' => 'text/html'}, 
+                  ['get rack\'d']
+                ] 
+              end
+            </div></pre>
+          </section>
+          
+          
+          
+          <section>
+            
+            <p>What are some examples of rack servers?
+            <p class="fragment">thin
+            <p class="fragment">unicorn
+            <p class="fragment">puma
+            <p class="fragment">webrick
+            
+            <aside class="notes">
+              <p>
+            </aside>
+          </section>
         </section>
         
         
-        <section>
-          <div style="background: url(images/curl_get.png) no-repeat; height: 600px; background-size: 100% auto;margin-top:100px"></div>
-          
-          <aside class="notes">
-            <p>Instruct class to boot up docker container
-            <p>
-          </aside>
-        </section>
         
-        <section>
-          <div style="background: url(images/tcpdump_web_transaction.png) no-repeat; height: 600px; background-size: 100% auto;margin-top:100px"></div>
-          
-          <aside class="notes">
-            <p>We see two stanzas (req, resp)
-            <p>tcp
-            <p>
-            <p>
-            <p>
-          </aside>
-        </section>
+        
+        <!------------------------------------ ??? SECTION ------------------------>
+        
         
         
         
