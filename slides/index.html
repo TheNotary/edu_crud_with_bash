@@ -34,7 +34,9 @@
 
           <aside class="notes">
             <p>Thank's Gabe for the honor of contributing to Noisebridge through RailsSchool.org
-            <p>Urge everyone to please give NoiseBridge...  all of your money
+            <p>donate to NB
+            <p>Download Docker Container
+            <p>Navigate to this tutorial
           </aside>
         </section>
         
@@ -97,9 +99,10 @@
 
             </div></pre>
             
-            <p>Code for backend 'perl'
-            <p>ANY UNIX PROCESS... show code for backend 'bash'
-
+            <aside class="notes">
+              <p>Code for backend 'perl'
+              <p>ANY UNIX PROCESS... show code for backend 'bash'
+            </aside>
           </section>
           
           <section>
@@ -142,15 +145,28 @@
           
           <section>
             <h3>Terminal Time!</h3>
+            
+            <aside class="notes">
+              <p>Boot up docker container
+              <p>share ip address with class
+              <p>/say navigate to index
+            </aside>
+          </section>
           
+          <section>
+            <div style="background: url(images/webserver_browser_interaction/what_a_webclient_does.png) no-repeat; height: 600px; background-size: 60% auto;"></div>
+            
+            <aside class="notes">
+              <p>Remember?  The first two parts
+            </aside>
           </section>
           
           <section>
             <div style="background: url(images/curl_get.png) no-repeat; height: 600px; background-size: 100% auto;margin-top:100px"></div>
             
             <aside class="notes">
-              <p>Instruct class to boot up docker container
-              <p>We're going to hit some of these CGI scripts
+              <p>I'm going to use a CLI web client
+              <p>You all can run this command
             </aside>
           </section>
           
@@ -181,7 +197,6 @@
           </section>
           
           <section>
-            
             <p>What's Rack app?  WSGI?  PSGI?
             <p class="fragment">An app written in a manor such that...
             
@@ -227,10 +242,6 @@
         
         
         <!------------------------------------ ??? SECTION ------------------------>
-        
-        
-        
-        
         <section>
           <div style="background: url(images/) no-repeat; height: 600px; background-size: 100% auto;margin-top:100px"></div>
           
@@ -265,151 +276,6 @@
         
         
         
-        
-        
-
-
-        <section>
-          <section>
-            <h2> Section 1 - </h2> <h3>???</h3>
-
-            <div style="text-align:left;">
-            <p>1. 
-            <p>2. 
-            <p>3. 
-
-          </section>
-
-        </section> <!-- End Section 1 ----------------------------------------->
-
-
-        <section>
-          <section>
-            <h2> Section 2 - </h2> <h3>Build Pseudo Complex large_app</h3>
-            <br>
-
-            <div style="text-align:left;">
-              <p class="fragment fade-up">The Formation of Our Software</p>
-              <p class="fragment fade-up">Rails App, Square 1</p>
-              <p class="fragment fade-up">Add Pseudo complexity, Messy controller</p>
-              <p class="fragment fade-up">Improve via Basic Method Extraction Refactoring</p>
-              <p class="fragment fade-up">OO Refactor</p>
-            </div>
-
-
-            <aside class="notes">
-              <p>WTS</p>
-            </aside>
-          </section>
-
-          <section>
-            <p class="">The Formation of Our Software</p>
-
-            <aside class="notes">
-              <p>Before we get started... gem... suppose we have some code... large_app... needs to be extracted... </p>
-              <p>Better than supposing... let's do it!</p>
-              <p>We'll add logic to the app then iteratively move it into better and better locations</p>
-            </aside>
-
-          </section>
-
-          <section>
-            <p>What should that logic be?</p> <br>
-            <p class="fragment fade-up">Thwart the NSA!</p>
-
-            <aside class="notes">
-              <p>- Ask slide!
-              <p>- Wait for just a moment... [CLK]
-              <p>- What if
-              <p>- What if we needed to enc/dec a string from...
-              <p>- And we expect to reuse
-            </aside>
-
-          </section>
-
-
-          <section data-transition="slide none">
-            <p class="">Typical Workflow</p>
-
-            <p class="fragment fade-up"> 1)  Have Rails App</p>
-            <p class="fragment fade-up"> 2)  App gets huge and takes forever to test</p>
-            <p class="fragment fade-up"> 3)  App gets extracted into gem(s)</p>
-
-            <aside class="notes">
-              <p>This is a fairly typical workflow for a gem's creation;</p>
-              <p>CREATION...</p>
-              <p>Does anyone know how a star is formed?</p>
-            </aside>
-          </section>
-
-        </section> <!-- End Section 2 ----------------------------------------->
-
-
-
-        <section>
-          <section>
-            <h2> Section 3 - </h2> <h3>Gem Extraction</h3>
-            <br>
-
-            <div style="display:flex; justify-content: space-around;">
-              <div style="text-align:left;">
-                <p class="fragment fade-up">Bundler Usage and Configs</p>
-                <p class="fragment fade-up">The Anatomy of a Gem</p>
-                <p class="fragment fade-up">Gem Extraction, Square 1</p>
-                <p class="fragment fade-up">Improve Library Interface</p>
-              </div>
-            </div>
-
-
-            <aside class="notes">
-              <p>Before we get started... tests...</p>
-              <p>we should have them...</p>
-              <p>Should be able to</p>
-              <p>WTS</p>
-            </aside>
-          </section>
-
-
-          <section>
-            <h4 class="">Bundler Usage and Configs</h4>
-            <p class="fragment fade-up" data-fragment-index="1"><span class="fragment fade-out" data-fragment-index="2">...and for my third wish, I wish for more wishes!</span></p>
-
-            <div class="fragment" data-fragment-index="2">
-              <span class="inline">(~/.bundle/config)</span>
-              <pre><div data-trim data-noescape>
-                ---
-                BUNDLE_GEM__COC: 'false'
-                BUNDLE_GEM__TEST: rspec
-                BUNDLE_GEM__MIT: false
-              </div></pre>
-            </div>
-
-            <aside class="notes">
-              <p>...under-advertized feature... but bundler, a ruby gem, </p>
-              <p>has the capability to make more gems.</p>
-              <p>Usually installed by default</p>
-            </aside>
-          </section>
-
-
-          <section>
-            <p class="">To build a gem, follow these commands:</p>
-
-            <pre class="fragment"><div data-trim data-noescape>
-              $  cd /tmp
-
-              $  bundle gem kewl_crypto
-            </div></pre>
-
-            <aside class="notes">
-              <p>change into a clean directory, could be tmp, could be somewhere more persistent, either way I want everyone to run this on their local.</p>
-              <p>Actually do the commands</p>
-            </aside>
-
-          </section>
-
-        </section> <!-- End Section 3 ----------------------------------------->
-
         <section>
           Who haz thoughts?
         </section>
