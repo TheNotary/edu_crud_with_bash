@@ -3,15 +3,18 @@ July 5, 2016
 
 
 #### Presentation Notes and Resources:
+  - Audience:  Hackers who are familiar with a web framework, but not fastcgi and would like to know how to build a web app with fucking bash scripts
+
   - [slides](slides/index.html)
   - [Dockerized Server Environment](https://github.com/TheNotary/webserver-hackme-edu)
   - [tcpdump cheat sheet](https://sites.google.com/site/jimmyxu101/testing/use-tcpdump-to-monitor-http-traffic)
+  - [middle ware infoz](https://blog.engineyard.com/2015/understanding-rack-apps-and-middleware)
 
 
 #### ToC
 
 Rough Notes:
-  - 
+  -
 
 
 ###### Section 1 - How Does the Web Work
@@ -21,12 +24,12 @@ Rough Notes:
 
 
 ###### Section 2 - What do web servers do?
-  
-  
+
+
 
 ###### Section 3 - Bash CRUD
-  - 
-  - 
+  -
+  -
 
 
 # Section 1 - How Does the Web Work
@@ -44,8 +47,8 @@ Can anyone tell me what a clients do?  (what does a client do with a server?...)
 
 That's great, so can someone tell me what a server does?
   - Sits around and waits for clients to take care of
-  
-  
+
+
 What's the most popular site in the world?  Google, right.  So when we "USE" google.com what role does google?  Server or client?  
   - Right it's the server, because it's sitting around waiting for us.  
 
@@ -114,7 +117,7 @@ PLEASE ASK ME ANYTHING!  WHAT ARE YOU CURIOUS ABOUT REGARDING THE WEB!!!!
   - fastcgi,
   - Thin details (good at handing over a web request to a web language, can speak directly with web browsers)
   - Fastcgi details
-  - 
+  -
 
 
 ## Ports
@@ -136,9 +139,9 @@ Have a look at this URL.
 
 `https://google.com:80`
 
-If we key that into an address bar, we'll be instructing our web browser client to... 
-  - utilize the https protocol, 
-  - convert the hostname `google.com` into an IP address like 216.58.192.14, and then 
+If we key that into an address bar, we'll be instructing our web browser client to...
+  - utilize the https protocol,
+  - convert the hostname `google.com` into an IP address like 216.58.192.14, and then
   - send data through a tcp stream to port 80 of the IP address to google.com
 
 
@@ -188,10 +191,9 @@ So when you boot up a rack application, you're booting up a web server.  One tha
 This is a valid rack app.  Valid rack apps need to expose a 'call' method (which will be called on the reciept of web requests) and it needs to respond with an array containing http 1.1 codes.  
 
 
-# Section 3 - 
+# Section 3 -
 
 
-## 
 
 
 
