@@ -24,12 +24,16 @@ Rough Notes:
 
 
 ###### Section 2 - What do web servers do?
-
+  - Ports
+  - Static File Serving
+  - fastcgi,
+  - Thin details (good at handing over a web request to a web language, can speak directly with web browsers)
+  - Fastcgi details
 
 
 ###### Section 3 - Bash CRUD
-  -
-  -
+  - 
+  - 
 
 
 # Section 1 - How Does the Web Work
@@ -111,13 +115,6 @@ PLEASE ASK ME ANYTHING!  WHAT ARE YOU CURIOUS ABOUT REGARDING THE WEB!!!!
 
 
 # Section 2 - What do web servers do?
-
-  - Ports
-  - Static File Serving
-  - fastcgi,
-  - Thin details (good at handing over a web request to a web language, can speak directly with web browsers)
-  - Fastcgi details
-  -
 
 
 ## Ports
