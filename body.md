@@ -4,7 +4,6 @@ July 5, 2016
 
 #### Presentation Notes and Resources:
   - Audience:  Hackers who are familiar with a web framework, but not fastcgi and would like to know how to build a web app with fucking bash scripts
-
   - [slides](slides/index.html)
   - [Dockerized Server Environment](https://github.com/TheNotary/webserver-hackme-edu)
   - [tcpdump cheat sheet](https://sites.google.com/site/jimmyxu101/testing/use-tcpdump-to-monitor-http-traffic)
@@ -32,8 +31,8 @@ Rough Notes:
 
 
 ###### Section 3 - Bash CRUD
-  - 
-  - 
+  -
+  -
 
 
 # Section 1 - How Does the Web Work

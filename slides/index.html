@@ -39,14 +39,14 @@
             <p>Navigate to this tutorial
           </aside>
         </section>
-        
-        
-        
-        <!------------------------------------ Browser/ Client SECTION ------------------------>  
+
+
+
+        <!------------------------------------ Browser/ Client SECTION ------------------------>
         <section>
           <section>
             <div style="background: url(images/webserver_browser_interaction/what_a_webclient_does.png) no-repeat; height: 600px; background-size: 60% auto;"></div>
-            
+
             <aside class="notes">
               <p>HTTP 1.1 request
               <p>HTML Document
@@ -54,32 +54,32 @@
               <p>WHERE's the backend???
             </aside>
           </section>
-          
+
           <section>
             <div style="background: url(images/bigstockphoto_many_doors_4222839.jpg) no-repeat; height: 600px; background-size: 100% auto;margin-top:100px"></div>
-            
+
             <aside class="notes">
               <p>Web Servers Listen on ports
               <p>Everything that happens on the other side of that port is the backend, right?
             </aside>
           </section>
         </section>
-        
-        
-        
-        <!------------------------------------ FASTCGI SECTION ------------------------>  
+
+
+
+        <!------------------------------------ FASTCGI SECTION ------------------------>
         <section>
           <section>
             <div style="background: url(images/nginx_fastcgi.jpg) no-repeat; height: 600px; background-size: 100% auto;"></div>
-            
+
             <aside class="notes">
               <p>
               <p>
             </aside>
           </section>
-          
+
           <section>
-          
+
             <span class="inline">(perl_hi.pl)</span>
             <pre><div data-trim data-noescape>
               #!/usr/bin/perl
@@ -98,13 +98,13 @@
               1;
 
             </div></pre>
-            
+
             <aside class="notes">
               <p>Code for backend 'perl'
               <p>ANY UNIX PROCESS... show code for backend 'bash'
             </aside>
           </section>
-          
+
           <section>
             <span class="inline">(bash_hi.sh)</span>
             <pre><div data-trim data-noescape>
@@ -124,17 +124,17 @@
               echo "Hello World !"
             </div></pre>
           </section>
-          
+
           <section>
             <span class="inline">(php_hi)</span>
             <pre><div data-trim data-noescape>
               #!/usr/bin/php
               Content-type:text/html
-              
+
               &lt;html&gt;
               &lt;body&gt;
               &lt;span&gt;
-                Random Number: 
+                Random Number:
                 &lt;?php echo rand(); ?&gt;
               &lt;/span&gt;
               Hello World!
@@ -142,140 +142,175 @@
               &lt;/html&gt;
             </div></pre>
           </section>
-          
+
           <section>
             <h3>Terminal Time!</h3>
-            
+
             <aside class="notes">
               <p>Boot up docker container
               <p>share ip address with class
-              <p>/say navigate to index
+              <p>/SAY navigate in a browser to my ip
+              <p>Two Questions!
+              <p>Did you know you can request a website from the terminal?
+              <p>Did you know you can watch the tcp packets that come from your web browser and go to a webserver?
             </aside>
           </section>
-          
+
           <section>
             <div style="background: url(images/webserver_browser_interaction/what_a_webclient_does.png) no-repeat; height: 600px; background-size: 60% auto;"></div>
-            
+
             <aside class="notes">
               <p>Remember?  The first two parts
             </aside>
           </section>
-          
+
           <section>
             <div style="background: url(images/curl_get.png) no-repeat; height: 600px; background-size: 100% auto;margin-top:100px"></div>
-            
+
             <aside class="notes">
               <p>I'm going to use a CLI web client
               <p>You all can run this command
             </aside>
           </section>
-          
+
           <section>
             <div style="background: url(images/tcpdump_web_transaction.png) no-repeat; height: 600px; background-size: 100% auto;margin-top:100px"></div>
-            
+
             <aside class="notes">
               <p>We see two stanzas (req, resp)
               <p>tcp
               <p>
             </aside>
           </section>
-          
+
         </section>
-        
-        
-        
-        
+
+
+
+
         <!------------------------------------ RACK SECTION ------------------------>
         <section>
           <section>
             <div style="background: url(images/nginx_rack.jpg) no-repeat; height: 600px; background-size: 100% auto;"></div>
-            
+
             <aside class="notes">
               <p>
               <p>
             </aside>
           </section>
-          
+
           <section>
             <p>What's Rack app?  WSGI?  PSGI?
             <p class="fragment">An app written in a manor such that...
-            
+
             <ul class="fragment">
               <li> Responds to call
               <li> returns an array [&lt;response code&gt;, &lt;headers&gt;, &lt;body&gt;]
             </ul>
-            
+
             <p class="fragment">Rack:  pattern for writing a piece of ruby code
             <p>
             <p>
           </section>
-          
+
           <section>
             <span class="inline">(config.ru)</span>
             <pre><div data-trim data-noescape>
-              run Proc.new do |env| 
-                [ '200', 
-                  {'Content-Type' => 'text/html'}, 
+              run Proc.new do |env|
+                [ '200',
+                  {'Content-Type' => 'text/html'},
                   ['get rack\'d']
-                ] 
+                ]
               end
             </div></pre>
           </section>
-          
-          
-          
+
+
+
           <section>
-            
+
             <p>What are some examples of rack servers?
             <p class="fragment">thin
             <p class="fragment">unicorn
             <p class="fragment">puma
             <p class="fragment">webrick
-            
+
             <aside class="notes">
               <p>
             </aside>
           </section>
         </section>
-        
-        
-        
-        
+
+
+
+        <!------------------------------------ MIDDLEWARE SECTION ------------------------>
+        <section>
+          <section>
+
+            <p>What's Middleware?
+
+            <p class="fragment">An HTTP 'layer' before the actual rack app
+            <br>
+            <p class="fragment">ORLY?
+            <p class="fragment">Can read/write headers
+            <p class="fragment">Can read/write body
+            <p class="fragment">Can hit the database
+            <p class="fragment">Can do any wierd stuff you want!
+
+
+            <aside class="notes">
+              <p>
+            </aside>
+          </section>
+
+          <section>
+            <div style="background: url(images/rack_middleware.jpg) no-repeat; height: 600px; background-size: 100% auto;margin-top:100px"></div>
+
+            <aside class="notes">
+              <p>
+              <p>
+            </aside>
+          </section>
+
+
+
+        </section>
+
         <!------------------------------------ ??? SECTION ------------------------>
         <section>
           <div style="background: url(images/) no-repeat; height: 600px; background-size: 100% auto;margin-top:100px"></div>
-          
+
           <aside class="notes">
             <p>
             <p>
           </aside>
         </section>
-        
-        
+
+
         <section>
           <div style="background: url(images/) no-repeat; height: 600px; background-size: 100% auto;margin-top:100px"></div>
-          
+
           <aside class="notes">
             <p>
             <p>
           </aside>
         </section>
-        
-        
-        
+
+
+
         <section>
           <div style="background: url(images/) no-repeat; height: 600px; background-size: 100% auto;margin-top:100px"></div>
-          
+
           <aside class="notes">
             <p>
             <p>
           </aside>
         </section>
-        
-        
-        
-        
-        
+
+
+
+
+
         <section>
           Who haz thoughts?
         </section>
